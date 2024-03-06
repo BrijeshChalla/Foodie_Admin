@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogoMain"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFoodieMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foodie"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoMain"
+        app:layout_constraintTop_toTopOf="@+id/imgLogoMain" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDetailsMain"
+        android:layout_width="0dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/textColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFoodieMain">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F4F4">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineVertical1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="387dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineVertical2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp" />
+
+            <ImageView
+                android:id="@+id/imgAttention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attention"
+                app:layout_constraintEnd_toEndOf="@id/txtPendingOrder"
+                app:layout_constraintStart_toStartOf="@id/txtPendingOrder"
+                app:layout_constraintTop_toTopOf="@+id/guideLineHorizontal" />
+
+            <TextView
+                android:id="@+id/txtPendingOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="8dp"
+                android:text="Pending Order"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideLineVertical1"
+                app:layout_constraintTop_toBottomOf="@id/imgAttention" />
+
+            <TextView
+                android:id="@+id/txtPendingOrderCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="30"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/txtPendingOrder"
+                app:layout_constraintStart_toStartOf="@id/txtPendingOrder"
+                app:layout_constraintTop_toBottomOf="@id/txtPendingOrder" />
+
+            <ImageView
+                android:id="@+id/imgRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right"
+                app:layout_constraintBottom_toTopOf="@id/txtCompletedOrder"
+                app:layout_constraintEnd_toEndOf="@id/txtCompletedOrder"
+                app:layout_constraintStart_toStartOf="@id/txtCompletedOrder"
+                app:layout_constraintTop_toTopOf="@+id/guideLineHorizontal" />
+
+            <TextView
+                android:id="@+id/txtCompletedOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:text="Completed\nOrder"
+                android:textAlignment="center"
+                android:textColor="#48D14E"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/txtPendingOrder"
+                app:layout_constraintTop_toBottomOf="@id/imgRight" />
+
+            <TextView
+                android:id="@+id/txtCompletedOrderCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="30"
+                android:textColor="#48D14E"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/txtCompletedOrder"
+                app:layout_constraintStart_toStartOf="@id/txtCompletedOrder"
+                app:layout_constraintTop_toBottomOf="@id/txtCompletedOrder" />
+
+            <ImageView
+                android:id="@+id/imgRupee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rupeepng"
+                app:layout_constraintEnd_toEndOf="@id/txtWholeEarning"
+                app:layout_constraintStart_toStartOf="@id/txtWholeEarning"
+                app:layout_constraintTop_toTopOf="@id/guideLineHorizontal" />
+
+            <TextView
+                android:id="@+id/txtWholeEarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="Whole Time\nEarning"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/guideLineVertical2"
+                app:layout_constraintStart_toEndOf="@id/txtCompletedOrder"
+                app:layout_constraintTop_toBottomOf="@id/imgRupee" />
+
+            <TextView
+                android:id="@+id/txtWholeEarningCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="5000₹"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/txtWholeEarning"
+                app:layout_constraintStart_toStartOf="@id/txtWholeEarning"
+                app:layout_constraintTop_toBottomOf="@id/txtWholeEarning" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addMenuLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintEnd_toStartOf="@id/allItemMenuLayout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvDetailsMain">
+
+        <ImageView
+            android:id="@+id/imgPlusRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/plus_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Add Menu"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgPlusRound"
+            app:layout_constraintStart_toStartOf="@id/imgPlusRound" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/allItemMenuLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintBottom_toBottomOf="@id/addMenuLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/addMenuLayout"
+        app:layout_constraintTop_toTopOf="@+id/addMenuLayout">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/menugreen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="All Item's Menu"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgMenu"
+            app:layout_constraintStart_toStartOf="@id/imgMenu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintEnd_toStartOf="@id/createNewUserLayout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addMenuLayout"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/profile_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgUser"
+            app:layout_constraintStart_toStartOf="@id/imgUser" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createNewUserLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintBottom_toBottomOf="@id/profileLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/profileLayout"
+        app:layout_constraintTop_toTopOf="@id/profileLayout">
+
+        <ImageView
+            android:id="@+id/imgUserPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Create New User"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgUserPlus"
+            app:layout_constraintStart_toStartOf="@id/imgUserPlus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderDispatchLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintEnd_toStartOf="@id/logoutLayout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileLayout"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageView
+            android:id="@+id/imgDispatchBoy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/delivery_man"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Order Dispatch"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgDispatchBoy"
+            app:layout_constraintStart_toStartOf="@id/imgDispatchBoy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logoutLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/red_card"
+        app:layout_constraintBottom_toBottomOf="@id/orderDispatchLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/orderDispatchLayout"
+        app:layout_constraintTop_toTopOf="@id/orderDispatchLayout">
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Log Out"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgLogout"
+            app:layout_constraintStart_toStartOf="@id/imgLogout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtDesignedByMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="Designed by\nPardy Panda Studios"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:scrollbars="none"
+    tools:context=".AddItemActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btnBackAddItem"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/arrow_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Item"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBackAddItem"
+            app:layout_constraintTop_toTopOf="@+id/btnBackAddItem" />
+
+        <EditText
+            android:id="@+id/etEnterFoodName"
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittextshape"
+            android:elevation="5dp"
+            android:hint="Enter Food Name"
+            android:inputType="text"
+            android:outlineSpotShadowColor="@color/textColor"
+            android:paddingLeft="15dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddItem" />
+
+        <EditText
+            android:id="@+id/etEnterFoodPrice"
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/edittextshape"
+            android:elevation="5dp"
+            android:hint="Enter Food Price"
+            android:inputType="text"
+            android:outlineSpotShadowColor="@color/textColor"
+            android:paddingLeft="15dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/etEnterFoodName"
+            app:layout_constraintStart_toStartOf="@+id/etEnterFoodName"
+            app:layout_constraintTop_toBottomOf="@+id/etEnterFoodName" />
+
+        <TextView
+            android:id="@+id/tvSelectImage"
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/edittextshape"
+            android:drawableEnd="@drawable/plus_round"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:outlineSpotShadowColor="@color/textColor"
+            android:paddingLeft="15dp"
+            android:paddingEnd="15dp"
+            android:text="Select Image"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/etEnterFoodPrice"
+            app:layout_constraintStart_toStartOf="@+id/etEnterFoodPrice"
+            app:layout_constraintTop_toBottomOf="@+id/etEnterFoodPrice" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSelectImage"
+            app:layout_constraintStart_toStartOf="@+id/tvSelectImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvSelectImage">
+
+            <ImageView
+                android:id="@+id/imgSelectedImage"
+                android:layout_width="175dp"
+                android:layout_height="110dp"
+                android:src="@drawable/addimage" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvAboutFood"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittextshape"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="About Food"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSelectImage"
+            app:layout_constraintStart_toStartOf="@+id/tvSelectImage"
+            app:layout_constraintTop_toBottomOf="@+id/imgCard" />
+
+        <EditText
+            android:id="@+id/etFoodInfo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:text="A Delicious pasta that's tossed in tomato cream sauce and finished with chopped fresh basil."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/tvAboutFood"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutFood" />
+
+        <TextView
+            android:id="@+id/tvIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittextshape"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Ingredients"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvAboutFood"
+            app:layout_constraintStart_toStartOf="@+id/tvAboutFood"
+            app:layout_constraintTop_toBottomOf="@+id/etFoodInfo" />
+
+        <EditText
+            android:id="@+id/etFoodIngredients"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:text="Fresh Tomato\nTomato Sauce\nFresh Basil"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/tvIngredients"
+            app:layout_constraintTop_toBottomOf="@+id/tvIngredients" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdditem"
+            android:layout_width="157dp"
+            android:layout_height="57dp"
+            android:background="@drawable/redbuttongradient"
+            android:text="Add Item"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etFoodIngredients" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
