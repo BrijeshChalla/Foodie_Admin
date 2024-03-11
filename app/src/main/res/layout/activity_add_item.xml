@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Add Item"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnBackAddItem"
             app:layout_constraintTop_toTopOf="@+id/btnBackAddItem" />
@@ -40,9 +40,9 @@
             android:id="@+id/etEnterFoodName"
             android:layout_width="0dp"
             android:layout_height="57dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/edittextshape"
             android:elevation="5dp"
             android:hint="Enter Food Name"
@@ -130,7 +130,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:paddingLeft="15dp"
-            android:text="A Delicious pasta that's tossed in tomato cream sauce and finished with chopped fresh basil."
+            android:hint="Add here short info about Food"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/tvAboutFood"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutFood" />
@@ -159,7 +159,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/white"
             android:paddingLeft="15dp"
-            android:text="Fresh Tomato\nTomato Sauce\nFresh Basil"
+            android:hint="Add here ingredients of food"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/tvIngredients"
             app:layout_constraintTop_toBottomOf="@+id/tvIngredients" />

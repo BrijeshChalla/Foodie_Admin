@@ -28,5 +28,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
+        binding.createNewUserLayout.setOnClickListener {
+            val intent = Intent(this,CreateUserActivity::class.java)
+            startActivity(intent)
+        }
+        binding.txtPendingOrder.setOnClickListener {
+            val intent = Intent(this,PendingOrderActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

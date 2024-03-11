@@ -24,9 +24,10 @@
         android:id="@+id/txtAdminProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:outlineSpotShadowColor="@color/textColor"
         android:text="Admin Profile"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBackAdminProfile"
         app:layout_constraintTop_toTopOf="@+id/btnBackAdminProfile" />
@@ -35,10 +36,11 @@
         android:id="@+id/tvEditYourProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:text="Edit Your Profile"
         android:textColor="@color/textColor"
-        app:layout_constraintStart_toStartOf="@id/btnBackAdminProfile"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtAdminProfile" />
 
     <TextView
@@ -46,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:clickable="true"
         android:drawableStart="@drawable/edit"
         android:gravity="center"
@@ -59,9 +61,9 @@
         android:id="@+id/nameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/edittextshape"
         android:elevation="2dp"
         android:gravity="center_vertical"
@@ -76,9 +78,9 @@
             android:id="@+id/txtNameAdminProfile"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Name:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -91,16 +93,17 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Your Full Name"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingStart="12dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/addressLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/edittextshape"
         android:elevation="2dp"
         android:gravity="center_vertical"
@@ -115,9 +118,9 @@
             android:id="@+id/txtAddressAdminProfile"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Address:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -131,7 +134,8 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Your Address"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:paddingStart="12dp" />
 
     </LinearLayout>
 
@@ -139,9 +143,9 @@
         android:id="@+id/emailLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/edittextshape"
         android:elevation="2dp"
         android:gravity="center_vertical"
@@ -156,9 +160,9 @@
             android:id="@+id/txtEmailAdminProfile"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Email:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -171,7 +175,8 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Your Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp" />
 
     </LinearLayout>
 
@@ -179,9 +184,9 @@
         android:id="@+id/phoneLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edittextshape"
         android:elevation="2dp"
@@ -197,9 +202,9 @@
             android:id="@+id/txtPhoneProfile"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Phone:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -212,7 +217,8 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Your Phone Number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:paddingStart="12dp" />
 
     </LinearLayout>
 
@@ -220,9 +226,9 @@
         android:id="@+id/passwordLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edittextshape"
         android:elevation="2dp"
@@ -238,7 +244,6 @@
             android:id="@+id/txtPasswordAdminProfile"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Password:"
             android:textColor="@color/black"
@@ -253,6 +258,7 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:inputType="textPassword"
+            android:paddingStart="12dp"
             android:text="123456" />
 
     </LinearLayout>
@@ -261,9 +267,9 @@
         android:id="@+id/btnSaveAdminProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/edittextshape"
         android:elevation="5dp"
         android:text="Save Info"
@@ -271,15 +277,15 @@
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtDesignedByAdminProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/txtDesignedByAdminProfile"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtDesignedByAdminProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="12dp"
         android:text="Designed by\nPardy Panda Studios"
         android:textAlignment="center"
         android:textSize="16sp"

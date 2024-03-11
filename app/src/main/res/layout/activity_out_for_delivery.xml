@@ -26,14 +26,14 @@
         android:layout_height="wrap_content"
         android:text="Out For Delivery"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBackOutForDelivery"
         app:layout_constraintTop_toTopOf="@+id/btnBackOutForDelivery" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/outForDeliverRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         tools:listitem="@layout/delivery_item"
