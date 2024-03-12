@@ -1,17 +1,22 @@
 package com.learnandroid.foodieadmin.adapter
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.database.DatabaseReference
 import com.learnandroid.foodieadmin.databinding.ItemsBinding
+import com.learnandroid.foodieadmin.model.AllMenu
 
-class AddItemAdapter(
-    private val menuItemName: ArrayList<String>,
-    private val menuItemPrice: ArrayList<String>,
-    private val menuItemImage: ArrayList<Int>
-) : RecyclerView.Adapter<AddItemAdapter.AddItemViewHolder>() {
+class MenuItemAdapter(
+    private val context: Context,
+    private val menuList: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference
+) : RecyclerView.Adapter<MenuItemAdapter.AddItemViewHolder>() {
 
-    private val itemQuantities = IntArray(menuItemName.size) { 1 }
+    private val itemQuantities = IntArray(menuList.size) { 1 }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddItemViewHolder {
@@ -23,16 +28,19 @@ class AddItemAdapter(
         holder.bind(position)
     }
 
-    override fun getItemCount(): Int = menuItemName.size
+    override fun getItemCount(): Int = menuList.size
 
     inner class AddItemViewHolder(private val binding: ItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
                 val quantity = itemQuantities[position]
-                txtFoodNameItem.text = menuItemName[position]
-                priceItem.text = menuItemPrice[position]
-                imgFoodIconItem.setImageResource(menuItemImage[position])
+                val menuItem = menuList[position]
+                val uriString = menuItem.foodImage
+                val uri = Uri.parse(uriString)
+                txtFoodNameItem.text = menuItem.foodName
+                priceItem.text = menuItem.foodPrice
+                Glide.with(context).load(uri).into(imgFoodIconItem)
 
                 txtQuantity.text = quantity.toString()
 
@@ -63,11 +71,11 @@ class AddItemAdapter(
         }
 
         private fun deleteQuantity(position: Int) {
-            menuItemName.removeAt(position)
-            menuItemPrice.removeAt(position)
-            menuItemImage.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position, menuItemName.size)
+            notifyItemRangeChanged(position, menuList.size)
         }
 
     }

@@ -42,7 +42,6 @@ class SignupActivity : AppCompatActivity() {
         val autoCompleteTextView = binding.tvLocationList
         autoCompleteTextView.setAdapter(adapter)
 
-        //Remove below code this is for testing
         binding.btnSignup.setOnClickListener {
 
             //get text from edittext
@@ -61,6 +60,7 @@ class SignupActivity : AppCompatActivity() {
         binding.btnAlreadyHave.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
@@ -89,6 +89,6 @@ class SignupActivity : AppCompatActivity() {
         val user = UserModel(userName, nameOfRestaurant, email, password)
         val userId = FirebaseAuth.getInstance().currentUser!!.uid
         //save user data in firebase database
-        database.child("user").child(userId).setValue(user)
+        database.child("admin").child(userId).setValue(user)
     }
 }
