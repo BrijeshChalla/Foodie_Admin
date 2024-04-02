@@ -2,6 +2,7 @@ package com.learnandroid.foodieadmin
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -73,9 +74,25 @@ class AllItemActivity : AppCompatActivity() {
     }
     private fun setAdapter() {
         val adapter =
-            MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference)
+            MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference){position ->
+                deleteMenuItems(position)
+            }
         binding.allItemRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.allItemRecyclerView.adapter = adapter
 
+    }
+
+    private fun deleteMenuItems(position: Int) {
+        val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val foodMenuReference = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.allItemRecyclerView.adapter?.notifyItemRemoved(position)
+            }else{
+                Toast.makeText(this,"Item not Removed",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

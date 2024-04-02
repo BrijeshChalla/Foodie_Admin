@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.learnandroid.foodieadmin.databinding.DeliveryItemBinding
 
 class DeliveryAdapter(
-    private val customerName: ArrayList<String>,
-    private val moneyStatus: ArrayList<String>
+    private val customerName: MutableList<String>,
+    private val moneyStatus: MutableList<Boolean>
 ) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewHolder {
@@ -29,14 +29,18 @@ class DeliveryAdapter(
         fun bind(position: Int) {
             binding.apply {
                 txtCustomerNameOutFor.text = customerName[position]
-                txtMoneyStatusOutFor.text = moneyStatus[position]
+                if (moneyStatus[position] == true) {
+                    txtMoneyStatusOutFor.text = "Received"
+                } else {
+                    txtMoneyStatusOutFor.text = "Not Received"
+                }
                 val colorMap = mapOf(
-                    "Received" to Color.GREEN,
-                    "Not Received" to Color.RED,
-                    "Pending" to Color.GRAY
+                    true to Color.GREEN,
+                    false to Color.RED
                 )
-                txtMoneyStatusOutFor.setTextColor(colorMap[moneyStatus[position]]?:Color.BLACK)
-                orderStatusColor.backgroundTintList = ColorStateList.valueOf(colorMap[moneyStatus[position]]?:Color.BLACK)
+                txtMoneyStatusOutFor.setTextColor(colorMap[moneyStatus[position]] ?: Color.BLACK)
+                orderStatusColor.backgroundTintList =
+                    ColorStateList.valueOf(colorMap[moneyStatus[position]] ?: Color.BLACK)
             }
         }
 

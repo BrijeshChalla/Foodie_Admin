@@ -13,7 +13,8 @@ import com.learnandroid.foodieadmin.model.AllMenu
 class MenuItemAdapter(
     private val context: Context,
     private val menuList: ArrayList<AllMenu>,
-    databaseReference: DatabaseReference
+    databaseReference: DatabaseReference,
+    private val onDeleteClickListener: (position : Int) -> Unit
 ) : RecyclerView.Adapter<MenuItemAdapter.AddItemViewHolder>() {
 
     private val itemQuantities = IntArray(menuList.size) { 1 }
@@ -51,7 +52,7 @@ class MenuItemAdapter(
                     decreaseQuantity(position)
                 }
                 btnDelete.setOnClickListener {
-                    deleteQuantity(position)
+                    onDeleteClickListener(position)
                 }
             }
         }
